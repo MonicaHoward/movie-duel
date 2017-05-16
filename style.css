@@ -46,12 +46,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
+h1 {
+  font-size: 3em;
+}
 header, footer {
   border: 1px solid #dddddd;
   height: 100px;
-  float: clear;
+  clear: both;
   overflow: auto;
+  padding: 20px;
   width: 100%;
 }
 .main-section {
@@ -60,7 +63,7 @@ header, footer {
   text-align: center;
 }
 .side-bar {
-  border: 1px solid #dddddd;
+  /*border: 1px solid #dddddd;*/
   display: inline-block;
   height: 600px;
   margin: auto 0;
