@@ -135,7 +135,7 @@ section input {
   /*margin-top: 250px;*/
   width: 400px;
 }
-
+/*RANDOMIZER PAGE*/
 .select-genre {
 	border: 1px solid #DDDDDD;
 	float: left;
@@ -143,4 +143,7 @@ section input {
 	margin: 18px;
 	text-align: center;
 	width: 100px;
+}
+.select-genre:hover {
+	border: 5px solid #DDDDDD;
 }
