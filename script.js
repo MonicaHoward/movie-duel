@@ -42,16 +42,13 @@ leftQuery.addEventListener('keyup', function(evt) {
     });
     console.log("Movie Name:", movie1Title);
     console.log("Movie Average:", movie1Average);
-
-
 });
-
 
 var movie2Title;
 var movie2Average;
 var rightQuery = document.querySelector('.right-query');
 rightQuery.addEventListener('keyup', function(evt) {
-  (evt.keyCode !== 13)
+  (evt.keyCode == 13)
   var movie2Title = rightQuery.value;
   console.log("what?", movie2Title);
   var re = / /gi;
@@ -60,8 +57,8 @@ rightQuery.addEventListener('keyup', function(evt) {
 
   movieTitle = movieTwo;
 
-  makeAjaxCall(movieTitle);
-  console.log("check", movieTitle);
+  // makeAjaxCall(movieTitle);
+  // console.log("check", movieTitle);
 
   var promise =
     $.ajax ({
@@ -82,12 +79,19 @@ var duelButton = document.querySelector("#duel-button");
 duelButton.addEventListener('click', function() {
 
     if (movie1Average > movie2Average) {
+      console.log('MOOOOOOP', movie1Title, movie2Title);
       return alert('THE WINNER IS: ' + movie1Title);
+
     }
-      else if {
+      else if (movie1Average < movie2Average) {
         return alert('THE WINNER IS: ' + movie2Title);
       }
-        else {
-          alert('DRAW');
-        }
+      // else if (movie1Average < movie2Average) {
+      //   console.log('flnky', movie2Title);
+      //   // return alert('WHY IS THE WINNER IS: ' + movie2Title);
+      
+      else {
+        alert('DRAW')
+      };
+
 });
