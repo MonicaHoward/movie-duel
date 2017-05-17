@@ -8,27 +8,33 @@ function makeAjaxCall(movieTitle){
      });
      promise.done(function(data) {
       console.log(data);
+      console.log("hooooooo", data.results[0].title);
+      console.log("fooooooo", data.results[0].vote_average);
      });
  }
 
 
 var leftQuery = document.querySelector('.left-query');
-var movie1Title;
-var movieOne;
-
 leftQuery.addEventListener('keyup', function(evt) {
   if (evt.keyup !== 13) {
-  movie1Title = leftQuery.value;
+  var movie1Title = leftQuery.value;
   }
   console.log("what?", movie1Title);
   var re = / /gi;
-  movieOne = movie1Title.replace(re, "+")
+  var movieOne = movie1Title.replace(re, "+")
   console.log("hey", movieOne);
-});
-movieTitle = movieOne;
-console.log("heyheyhey", movieTitle);
 
-makeAjaxCall();
+  movieTitle = movieOne;
+
+  makeAjaxCall(movieTitle);
+  console.log("check", movieTitle);
+
+
+
+});
+
+
+
 
 
 
