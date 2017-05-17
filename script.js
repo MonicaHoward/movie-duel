@@ -1,6 +1,17 @@
 var promise =
-makeAjaxCall();
+var leftQuery = document.querySelector('.left-query');
+var movie1Title;
+var movieOne;
 
+leftQuery.addEventListener('keyup', function(evt) {
+  if (evt.keyup !== 13) {
+  movie1Title = leftQuery.value;
+  }
+  console.log("what?", movie1Title);
+  var re = / /gi;
+  movieOne = movie1Title.replace(re, "+")
+  console.log("hey", movieOne);
+});
 
 function makeAjaxCall(){
   var promise =
@@ -13,18 +24,6 @@ function makeAjaxCall(){
 }
 
 
-var leftQuery = document.querySelector('.left-query');
-leftQuery.addEventListener('keyup', function(evt) {
-  (evt.keyCode !== 13)
-  var movie1Title = leftQuery.value;
-  console.log("what?", movie1Title);
-  var re = / /gi;
-  movieOne = movie1Title.replace(re, "+")
-  console.log("hey", movieOne);
-});
-
-
-
 var rightQuery = document.querySelector('.right-query');
 rightQuery.addEventListener('keyup', function(evt) {
   (evt.keyCode !== 13)
@@ -33,4 +32,6 @@ rightQuery.addEventListener('keyup', function(evt) {
   var re = / /gi;
   movieTwo = movie2Title.replace(re, "+")
   console.log("hey", movieTwo);
+  makeAjaxCall();
+
 });
