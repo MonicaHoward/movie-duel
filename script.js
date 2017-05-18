@@ -18,7 +18,7 @@ var movie1Average;
 var leftQuery = document.querySelector('.left-query');
 leftQuery.addEventListener('keyup', function(evt) {
   if (evt.keyup !== 13) {
-  movie1Title = leftQuery.value;
+    movie1Title = leftQuery.value;
   }
   console.log("what?", movie1Title);
   var re = / /gi;
@@ -48,11 +48,12 @@ var movie2Title;
 var movie2Average;
 var rightQuery = document.querySelector('.right-query');
 rightQuery.addEventListener('keyup', function(evt) {
-  (evt.keyCode == 13)
-  var movie2Title = rightQuery.value;
+  if (evt.keyCode !== 13) {
+    movie2Title = rightQuery.value;
+  }
   console.log("what?", movie2Title);
   var re = / /gi;
-  movieTwo = movie2Title.replace(re, "+")
+  var movieTwo = movie2Title.replace(re, "+")
   console.log("hey", movieTwo);
 
   movieTitle = movieTwo;
@@ -72,26 +73,23 @@ rightQuery.addEventListener('keyup', function(evt) {
     });
     console.log("Movie Name:", movie2Title);
     console.log("Movie Average:", movie2Average);
+
 });
 
 
 var duelButton = document.querySelector("#duel-button");
 duelButton.addEventListener('click', function() {
-
+  console.log('SHOW ME THE MONEY', movie2Title);
     if (movie1Average > movie2Average) {
+
       console.log('MOOOOOOP', movie1Title, movie2Title);
       return alert('THE WINNER IS: ' + movie1Title);
-
+  console.log('SHOW ME THE MONEY', movie2Title);
     }
       else if (movie1Average < movie2Average) {
+
         return alert('THE WINNER IS: ' + movie2Title);
       }
-      // else if (movie1Average < movie2Average) {
-      //   console.log('flnky', movie2Title);
-      //   // return alert('WHY IS THE WINNER IS: ' + movie2Title);
-      
-      else {
-        alert('DRAW')
-      };
+
 
 });
